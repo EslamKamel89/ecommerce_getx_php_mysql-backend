@@ -143,13 +143,13 @@ function checkAuthenticate()
     // End 
 }
 
-function printFailure($message = "none")
+function printFailure($data = "none")
 {
-    echo json_encode(array("status" => "failure", 'message' => $message));
+    echo json_encode(array("status" => "failure", 'data' => $data));
 }
-function printSuccess($message = "none")
+function printSuccess($data = "none")
 {
-    echo json_encode(array("status" => "success", 'message' => $message));
+    echo json_encode(array("status" => "success", 'data' => $data));
 }
 //! this function i didn't apply it because i don't have a host
 function sendEmail($to, $subject, $message)
