@@ -6,10 +6,8 @@ $email = filterRequest("email");
 $phone = filterRequest("phone");
 // for the password you should use sha1 for security reasons
 $password = sha1($_POST["password"]);
-//! to make verify code to work you have to upload it 
-//! to a real host 
-$verifyCode = "11111";
-// $verifyCode = rand(10000 , 99999);
+// $verifyCode = "11111";
+$verifyCode = rand(10000 , 99999);
 
 $stmt = $con->prepare("SELECT * FROM `users` WHERE `users_email`=? OR `users_phone` = ?");
 $stmt->execute(array($email, $phone));
