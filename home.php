@@ -26,5 +26,5 @@ CREATE OR REPLACE VIEW itemsview AS SELECT
     categories.*
 FROM
     items
-INNER JOIN categories ON items.items_id = categories.categories_id
+INNER JOIN categories ON items_categories_id = categories_id
 */
