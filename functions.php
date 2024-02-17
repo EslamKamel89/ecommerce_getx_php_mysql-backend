@@ -167,6 +167,8 @@ function printSuccess($data = "none")
 {
     echo json_encode(array("status" => "success", 'data' => $data));
 }
+
+
 //! this function i didn't apply it because i don't have a host
 function sendEmail($to, $subject, $message)
 {
