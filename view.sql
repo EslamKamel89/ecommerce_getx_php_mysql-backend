@@ -30,4 +30,17 @@ SELECT
 FROM
     favorite
     INNER JOIN items ON items.items_id = favorite.favorite_itemid
-    INNER JOIN users ON users.users_id = favorite.favorite_userid
+    INNER JOIN users ON users.users_id = favorite.favorite_userid ------------------------------------------------------------------------
+    CREATE
+    OR REPLACE VIEW cartview AS
+SELECT
+    SUM(items.items_price) AS totalprice,
+    COUNT(cart.cart_itemid) AS countitems,
+    items.*,
+    cart.*
+FROM
+    cart
+    INNER JOIN items ON items.items_id = cart.cart_itemid
+GROUP BY
+    cart.cart_itemid,
+    cart.cart_userid
